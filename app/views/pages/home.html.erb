@@ -1,2 +1,47 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="m-5">
+  <%= link_to 'About', about_path%>
+
+  <%# controller / lifecycle %>
+  <%# <div data-controller="hello" class='mt-3'></div> %>
+
+
+  <%# actions %>
+  <%# <div data-controller="hello" class='mt-3'>
+    <button data-action="click->hello#greet">Greet</button>
+    <input data-action="focus->hello#greet change@window->hello#greet"></input>
+  </div> %>
+
+
+  <%# target uniq %>
+  <%# <div data-controller="hello" class='mt-3'>
+    <input data-target="hello.name" type="text">
+  
+    <button data-action="click->hello#greet">
+      Greet
+    </button>
+
+    <span data-target="hello.output" class='ml-2'></span>
+  </div> %>
+
+  <%# target multiple %>
+  <%# <div data-controller="hello" class='mt-3'>
+    <input data-target="hello.name" type="text">
+  
+    <button data-action="click->hello#greet">
+      Greet
+    </button>
+
+    <span data-target="hello.output" class='ml-2'></span>
+    <span data-target="hello.output" class='ml-2'></span>
+    <span data-target="hello.output" class='ml-2'></span>
+    <span data-target="hello.output" class='ml-2'></span>
+  </div> %>
+
+
+  <%# asynchronous loading html %>
+  <div data-controller="content-loader"
+        data-content-loader-url="/messages.html"
+  >
+    <button data-action="content-loader#load" class='mt-3'>Load messages</button>
+  </div>
+</div>
