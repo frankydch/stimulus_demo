@@ -1,0 +1,29 @@
+<div class="m-5">
+
+  <h3 class='mt-3'>Exercice 1 : Guitars sounds</h3>
+
+  <div data-controller="exercices--guitars" data-action="keydown@window->exercices--guitars#playSound">
+    <div>
+       <div data-key="65" data-action="transitionend->exercices--guitars#removeTransition">
+        <kbd>A</kbd>
+        <span>Accoustic</span>
+      </div>
+      <div data-key="69" data-action="transitionend->exercices--guitars#removeTransition">
+        <kbd>E</kbd>
+        <span>Electric</span>
+      </div>
+      <div data-key="83" data-action="transitionend->exercices--guitars#removeTransition">
+        <kbd>S</kbd>
+        <span>Synthetic</span>
+      </div>
+    </div>
+    <audio data-key="65" src="guitars/sounds/acoustic.wav"></audio>
+    <audio data-key="69" src="guitars/sounds/electric.wav"></audio>
+    <audio data-key="83" src="guitars/sounds/synthetic.wav"></audio>
+  </div>
+
+
+  <h3 class='mt-3'>Exercice 2</h3>
+
+  <h3 class='mt-3'>Exercice 3</h3>
+</div>
