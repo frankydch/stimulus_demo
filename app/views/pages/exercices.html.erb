@@ -73,7 +73,7 @@
     }
 
     function handleSubmit (e) {
-      e.preventDefault() // prevent from refreshing the page on submit
+      e.preventDefault()
       const item = { name: inputText.value, checked: false };
       items.push(item);
       e.target.reset();
