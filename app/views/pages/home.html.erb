@@ -2,57 +2,94 @@
   <%= link_to 'Vers les exercices', exercices_path %>
   <h3 class='mt-3'>Démo</h3>
   <%# controller / lifecycle %>
-  <%# <div data-controller="demo" class='mt-3'></div> %>
+  <div data-controller="demo" class='mt-3'></div>
+
+
+
+
 
   <%# shorthand action %>
   <%# <div data-controller="demo" class='mt-3'>
     <button data-action="click->demo#hello">Hello</button>
   </div> %>
 
+
   <%# multiple actions %>
   <%# <div data-controller="demo" class='mt-3'>
     <button data-action="click->demo#hello">hello</button>
-    <input data-action="focus->demo#hello change@window->demo#hello"></input>
+    <input data-action="demo#hello focus->demo#hello"></input>
   </div> %>
+
+
+
+
+
 
   <%# target uniq %>
   <%# <div data-controller="demo" class='mt-3'>
-    <button data-action="click->demo#hello">
+    <button data-action="demo#hello">
       hello
     </button>
-    <input data-target="demo.name" type="text">
-    <span data-target="demo.output" class='ml-2'></span>
+    <input data-demo-target="name" type="text">
+    <span data-demo-target="output" class='ml-2'></span>
   </div> %>
+
 
   <%# target multiple %>
   <%# <div data-controller="demo" class='mt-3'>
-    <button data-action="click->demo#hello">
+    <button data-action="demo#hello">
       hello
     </button>
-    <input data-target="demo.name" type="text">
-    <span data-target="demo.output" class='ml-2'></span>
-    <span data-target="demo.output" class='ml-2'></span>
-    <span data-target="demo.output" class='ml-2'></span>
-    <span data-target="demo.output" class='ml-2'></span>
+    <input data-demo-target="name" type="text">
+    <span data-demo-target="output" class='ml-2'></span>
+    <span data-demo-target="output" class='ml-2'></span>
+    <span data-demo-target="output" class='ml-2'></span>
+    <span data-demo-target="output" class='ml-2'></span>
   </div> %>
+
+
+
+
+
+
+
+
 
   <%# asynchronous loading html %>
   <%# <div data-controller="demo"
-     data-demo-url-messages="/messages.html"
-     data-demo-url-users="https://jsonplaceholder.typicode.com/users"
+     data-demo-messages-value="/messages.html"
+     data-demo-users-value="https://jsonplaceholder.typicode.com/users"
   >
 
-     <button data-action='click->demo#load' class='mt-2'>Load messages</button>
+     <button data-action='demo#load' class='mt-2'>Load messages</button>
      <div data-target='demo.messages'></div>
-     <button data-action='click->demo#print' class='mt-2'>Print Users in console</button>
+     <button data-action='demo#print' class='mt-2'>Print Users in console</button>
   </div> %>
 
+
+
+  <%# CSS classes %>
+  <%# <div data-controller="demo"
+       data-demo-users-value="https://jsonplaceholder.typicode.com/users"
+       data-demo-printed-class="printed"
+  >
+     <button data-action='demo#print' data-demo-target="button" class='mt-2'>Print Users in console</button>
+  </div> %>
+
+
+
+
+
+
+
+
+
   <%# inheritance %>
-  <%# <div data-controller="base">
-    <p data-target="base.output" />
+  <%# <div data-controller="parent">
+    <p data-parent-target="element" />
   </div>
 
   <div data-controller="demo">
-    <p data-target="demo.output" />
+    <p data-demo-target="element" />
   </div> %>
 </div>

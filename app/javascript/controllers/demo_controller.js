@@ -1,37 +1,47 @@
 import { Controller } from "stimulus"
-import BaseController from "./base_controller"
+import ParentController from "./parent_controller"
 
-// export default class extends Controller  {
-//   initialize() {
-//     console.log(this.element)
-//     console.log('initialize!')
-//   }
-//   connect() {
-//     console.log('connect!')
-//   }
-//   disconnect() {
-//     console.log('disconnect')
-//   }
-// }
+export default class extends Controller  {
+  initialize() {
+    console.log(this.element)
+    console.log('initialize!')
+  }
+  connect() {
+    console.log('connect!')
+  }
+  disconnect() {
+    console.log('disconnect')
+  }
+}
+
+
+
 
 // export default class extends Controller {
 //   hello(e) {
-//     console.log(e.currentTarget);
 //     console.log('Event:', e);
 //     console.log('hello by click!');
 //   }
 // }
-
+  
+  
 // export default class extends Controller {
 //   hello(e) {
-//     console.log('Event:', e);
+//     // console.log('Event:', e);
+//     console.log(e.currentTarget);
 //     if (e.type == 'click') {
 //       console.log('hello by click!');
+//     } else if (e.type == 'input') {
+//         console.log('hello by input!');
 //     } else {
 //       console.log('hello by focus!');
 //     }
 //   }
 // }
+
+
+
+
 
 // export default class extends Controller {
 //   static targets = [ "name", "output" ]
@@ -46,21 +56,35 @@ import BaseController from "./base_controller"
 //   static targets = [ "name", "output" ]
 
 //   hello() {
-//       console.log(this.outputTargets);
-//       this.outputTargets.forEach((t) => t.textContent = `hello ${this.nameTarget.value}!`);
-//     }
+//     console.log(this.outputTargets);
+//     this.outputTargets.forEach((t) => t.textContent = `hello ${this.nameTarget.value}!`);
 //   }
+// }
   
+
+
+
+
+
+
+
+
+
 // export default class extends Controller {
+//   static values = { 
+//     messages: String,
+//     users: String
+//   }
 //   static targets = [ "messages" ]
   
 //   connect() {
-//     const url = this.data.get("url-messages");
-//     console.log(url);
+//     // const url = this.data.get("url-messages");
+//     console.log(this.messagesValue);
 //   }
 
 //   load() {
-//     fetch(this.data.get("url-messages"))
+//     // this.usersValue = "https://jsonplaceholder.typicode.com/users/2"
+//     fetch(this.messagesValue)
 //       .then(response => response.text())
 //       .then(html => {
 //         this.messagesTarget.innerHTML = html
@@ -68,21 +92,50 @@ import BaseController from "./base_controller"
 //   }
 
 //   print() {
-//     fetch(this.data.get("url-users"))
+//     fetch(this.usersValue)
 //       .then(response => response.json())
 //       .then(data =>
 //         console.log(data)
 //     )
 //   }
+
+//   // usersValueChanged() {
+//   //   this.print()
+//   // }
 // }
 
-// export default class extends BaseController {
-//   static targets = ["output"];
+
+
+
+// export default class extends Controller {
+//   static values = { users: String }
+//   static targets = [ "button" ]
+//   static classes = [ "printed" ]
+
+//   print() {
+//     fetch(this.usersValue)
+//       .then(response => response.json())
+//       .then(data =>
+//         console.log(data),
+//         this.buttonTarget.classList.add(this.printedClass)
+//     )
+//   }
+// }
+
+
+
+
+
+
+
+// export default class extends ParentController {
+//   static targets = ["element"];
 
 //   connect() {
 //     super.connect();
 //   }
+  
 //   updateText(){
-//     this.outputTarget.innerText = 'Hello from the ChildController'
+//     this.elementTarget.innerText = 'Hello from the ChildController'
 //   }
 // }

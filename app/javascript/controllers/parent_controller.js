@@ -1,13 +1,13 @@
 import { Controller } from "stimulus"
 
 export default class extends Controller {
-  static targets = ["output"];
+  static targets = ["element"];
   
   connect() {
     this.updateText()
   }
   
   updateText(){
-    this.outputTarget.innerText = 'Hello from the BaseController'
+    this.elementTarget.innerText = 'Hello from the ParentController'
   }
 }

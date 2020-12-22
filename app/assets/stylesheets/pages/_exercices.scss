@@ -1,0 +1,22 @@
+.playing > kbd {
+  background-color: #c9c9c9;
+  color: black;
+}
+
+.gifts label {
+  flex: 1;
+  cursor: pointer;
+}
+
+.gifts input {
+  display: none;
+}
+
+.gifts input + label:before {
+  content: "⬜️";
+  margin-right: 10px;
+}
+
+.gifts input:checked + label:before {
+  content: "🎁";
+}
